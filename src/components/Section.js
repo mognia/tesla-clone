@@ -1,20 +1,22 @@
 import styled from "styled-components";
 
-function Section() {
+function Section({title,desc,leftBtntext,rightBtnText,bg}) {
     return (
-        <Warp>
+        <Warp bgImg={bg}>
             <ItemText>
-                <h1>Model S</h1>
-                <p>Order Online Touches Delivery</p>
+                <h1>{title}</h1>
+                <p>{desc}</p>
             </ItemText>
             <Buttons>
             <ButtonGroup>
                 <ButtonLeft>
-                    Custom Order
+                    {leftBtntext}
                 </ButtonLeft>
+                {rightBtnText &&
                 <ButtonRight>
-                    Existing Inventory
+                    {rightBtnText}
                 </ButtonRight>
+                }
             </ButtonGroup>
             <DownArrow src='/images/down-arrow.svg' />
             </Buttons>
@@ -29,7 +31,7 @@ const Warp = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("/images/model-s.jpg");
+  background-image: ${props => `url("images/${props.bgImg}")`};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
