@@ -1,24 +1,29 @@
 import styled from "styled-components";
+import Fade from 'react-reveal/Fade';
 
-function Section({title,desc,leftBtntext,rightBtnText,bg}) {
+function Section({title, desc, leftBtntext, rightBtnText, bg}) {
     return (
         <Warp bgImg={bg}>
-            <ItemText>
-                <h1>{title}</h1>
-                <p>{desc}</p>
-            </ItemText>
+            <Fade bottom>
+                <ItemText>
+                    <h1>{title}</h1>
+                    <p>{desc}</p>
+                </ItemText>
+            </Fade>
             <Buttons>
-            <ButtonGroup>
-                <ButtonLeft>
-                    {leftBtntext}
-                </ButtonLeft>
-                {rightBtnText &&
-                <ButtonRight>
-                    {rightBtnText}
-                </ButtonRight>
-                }
-            </ButtonGroup>
-            <DownArrow src='/images/down-arrow.svg' />
+                <Fade bottom>
+                    <ButtonGroup>
+                        <ButtonLeft>
+                            {leftBtntext}
+                        </ButtonLeft>
+                        {rightBtnText &&
+                            <ButtonRight>
+                                {rightBtnText}
+                            </ButtonRight>
+                        }
+                    </ButtonGroup>
+                </Fade>
+                <DownArrow src='/images/down-arrow.svg'/>
             </Buttons>
         </Warp>
     )
@@ -38,18 +43,18 @@ const Warp = styled.div`
   align-items: center;
 `
 const ItemText = styled.div`
-padding-top: 15vh;
+  padding-top: 15vh;
   text-align: center;
 `
 const ButtonGroup = styled.div`
- display: flex;
+  display: flex;
   margin-bottom: 30px;
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     flex-direction: column;
   }
 `
 const ButtonLeft = styled.div`
-    background-color: rgba(23, 26, 32, 0.8);
+  background-color: rgba(23, 26, 32, 0.8);
   height: 40px;
   width: 256px;
   color: white;
@@ -64,7 +69,7 @@ const ButtonLeft = styled.div`
   margin: 8px;
 `
 const ButtonRight = styled(ButtonLeft)`
-background: white;
+  background: white;
   opacity: 0.65;
   color: black;
 `
