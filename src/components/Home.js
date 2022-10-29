@@ -43,7 +43,7 @@ function Home() {
             title = 'Accessories'
             desc=''
             bg='accessories.jpg'
-            leftBtntext='SHop Now'
+            leftBtntext='Shop Now'
             />
         </Container>
     )

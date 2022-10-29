@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import MenuIcon from '@mui/icons-material/Menu';
 
 function Header() {
     return (
@@ -7,11 +8,17 @@ function Header() {
                 <img src="/images/logo.svg"/>
             </a>
         <Menu>
-            <p><a href="#">Model S</a></p>
-            <p><a href="#">Model 3</a></p>
-            <p><a href="#">Model X</a></p>
-            <p><a href="#">Model Y</a></p>
+            <a href="#">Model S</a>
+            <a href="#">Model 3</a>
+            <a href="#">Model X</a>
+            <a href="#">Model Y</a>
         </Menu>
+            <RightMenu>
+                <a href="#">Support</a>
+                <a href="#">Shop</a>
+                <a href="#">Account</a>
+                <a href="#">Menu</a>
+            </RightMenu>
         </Container>
     )
 }
@@ -22,6 +29,7 @@ const Container = styled.div`
   position: fixed;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
   top:0;
   left: 0;
@@ -40,4 +48,17 @@ const Menu = styled.div`
     padding: 0 10px;
     flex-wrap: nowrap;
   }
+  @media(max-width: 768px) {
+    display: none;
+  }
 `;
+const RightMenu = styled.div`
+    a{
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-right: 10px;
+
+    }
+`
+const CustomMenu = styled(MenuIcon) `
+`
