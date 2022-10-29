@@ -1,19 +1,23 @@
 import styled from "styled-components";
 import CloseIcon from '@mui/icons-material/Close';
 import {useState} from "react";
+import {useSelector} from "react-redux";
+import {selectCars} from "../features/car/carSlice";
 
 function Header() {
     const [burgerStatus, setBurgerStatus] = useState(false)
+    const cars = useSelector(selectCars)
+    console.log(cars)
     return (
         <Container>
             <a>
                 <img src="/images/logo.svg"/>
             </a>
             <Menu>
-                <a href="#">Model S</a>
-                <a href="#">Model 3</a>
-                <a href="#">Model X</a>
-                <a href="#">Model Y</a>
+                {cars && cars.map((car,index)=> (
+                <a key={index} href="#">{car}</a>
+                    )
+                )}
             </Menu>
             <RightMenu>
                 <a href="#">Support</a>
