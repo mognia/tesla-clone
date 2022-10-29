@@ -14,8 +14,8 @@ function Header() {
                 <img src="/images/logo.svg"/>
             </a>
             <Menu>
-                {cars && cars.map((car,index)=> (
-                <a key={index} href="#">{car}</a>
+                {cars && cars.map((car, index) => (
+                        <a key={index} href="#">{car}</a>
                     )
                 )}
             </Menu>
@@ -29,6 +29,10 @@ function Header() {
                 <CloseWrapper>
                     <CustomClose onClick={() => setBurgerStatus(false)}/>
                 </CloseWrapper>
+                {cars && cars.map((car, index) => (
+                        <li key={index}><a  href="#">{car}</a></li>
+                    )
+                )}
                 <li><a href="#">Lorem Iprisum</a></li>
                 <li><a href="#">Lorem Iprisum</a></li>
                 <li><a href="#">Lorem Iprisum</a></li>

@@ -33,6 +33,7 @@ export default Section
 const Warp = styled.div`
   width: 100vw;
   height: 100vh;
+  scroll-snap-align: center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
